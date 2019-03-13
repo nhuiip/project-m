@@ -1,0 +1,139 @@
+#side-menu.nav>li.active {
+    border-left: 4px solid #b33939;
+    border-top: none;
+}
+//------------------------------------------------------------------------------------------------>
+
+
+a,
+a:hover,
+a:link {
+  color: #333;
+  text-decoration: none;
+}
+.mini-navbar .nav-second-level {
+  position: absolute;
+  left: 70px;
+  top: 0;
+  background-color: #dfe4ea;
+  padding: 10px 10px 10px 10px;
+  font-size: 12px;
+}
+body:not(.fixed-sidebar):not(.canvas-menu).mini-navbar
+  .nav
+  li:hover
+  > .nav-second-level,
+.mini-navbar .nav li:focus > .nav-second-level {
+  display: block;
+  border-radius: 0 2px 2px 0;
+  // display: block;
+  min-width: 200px;
+  height: auto;
+}
+.login-bg {
+  background: url(../../bg-login.jpg) center no-repeat;
+  background-size: cover;
+}
+.nav-header {
+  padding: 33px 25px;
+  background: none;
+}
+body {
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: none;
+  font-size: 13px;
+  color: #333;
+}
+#page-wrapper {
+  padding: 0 15px;
+  min-height: 568px;
+  position: relative !important;
+  border-left: 1px solid #e7eaec;
+}
+.minimalize-styl-2 {
+  padding: 4px 12px;
+  margin: 10px 5px 5px 20px;
+  font-size: 14px;
+  float: left;
+}
+.nav > li > a {
+  color: #333;
+  font-weight: 600;
+  padding: 14px 20px 14px 25px;
+}
+.nav > li.active {
+  border-top: 3px solid #e7eaec;
+  background: #dfe4ea;
+}
+.nav-tabs > li.active {
+  border-top: none;
+  background: #dfe4ea;
+}
+body.mini-navbar .nav-header {
+  padding: 0;
+  background-color: none;
+}
+.text-muted {
+  color: #333;
+}
+.nav.navbar-right > li > a {
+  color: #333;
+}
+.logo-element img {
+  width: 60px;
+  height: auto;
+}
+.file .icon,
+.file .image {
+  height: 135px;
+  overflow: hidden;
+}
+.tag-list li .active {
+  background-color: #cacfd2;
+}
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+  vertical-align: middle;
+  border-top: 0px solid #e7eaec;
+}
+.border-dashed {
+  text-align: left;
+  padding-left: 5px;
+  border-bottom: 2px dashed #ddd;
+}
+.f-apply {
+  margin-bottom: 15px;
+}
+.profile {
+  width: 155px;
+  height: 155px;
+  padding: 5px;
+  border: 2px solid #ddd;
+  float: right;
+}
+.profile img {
+  width: 140px;
+  height: 140px;
+}
+.btn-w-m {
+  margin-left: 10px;
+}
+// .nav>li>a {
+//   font-weight: 600;
+//   padding: 15px 20px 15px 20px;
+// }
+@media (max-width: 1000px) {
+  .welcome-message {
+    display: none;
+  }
+}
+
+@media print {
+  #noneprint {
+  	display: none;
+  }
+}

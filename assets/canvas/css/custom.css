@@ -1,0 +1,119 @@
+/* ------------------------------------
+	top bar css 
+---------------------------------------*/
+.navbar {
+  margin-bottom: 0px;
+  width: 100%;
+  border-radius: 0px;
+}
+.navbar-brand {
+  width: 250px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 0px;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #333333;
+  font-size: 14px;
+}
+/* ------------------------------------
+	Head Text 
+---------------------------------------*/
+.headtext {
+  color: #b33939;
+  margin: 10px 0 0px;
+}
+.head-title {
+  text-align: center;
+  color: #b33939;
+}
+#page-title {
+  padding: 30px 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+.breadcrumb > .active {
+  color: #b33939;
+  font-weight: bold;
+}
+#logo,
+#primary-menu ul li > a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Lato, sans-serif;
+}
+/* ------------------------------------
+	News CSS 
+---------------------------------------*/
+a {
+  text-decoration: none !important;
+  color: #b33939;
+}
+.entry-image {
+  height: 200px;
+}
+.entry-title {
+  height: 40px;
+}
+.entry-meta {
+  height: 30px;
+}
+.entry-content {
+  height: 50px;
+}
+.testimonial.testimonial-full,
+.testimonial.testimonial-full[data-animation="fade"] {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.testimonial {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+.entry-meta li {
+  float: left;
+  font-size: 13px;
+  line-height: 14px;
+  margin: 0 10px 15px 0;
+  color: #333;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+}
+
+.quantity .qty {
+  width: 50px;
+  border: none;
+  border-left: none;
+  border-right: 1px solid #ddd;
+  margin-bottom: 0;
+  color: #c0392b;
+  font-weight: 500;
+}
+
+h1 > span:not(.nocolor),
+h2 > span:not(.nocolor),
+h3 > span:not(.nocolor),
+h4 > span:not(.nocolor),
+h5 > span:not(.nocolor),
+h6 > span:not(.nocolor) {
+  color: #333333;
+}
+
+.stretched #gotoTop {
+  bottom: 30px;
+}
+
+/* body:not(.device-touch) #gotoTop {
+  transition: background-color .2s linear;
+  -webkit-transition: background-color .2s linear;
+  -o-transition: background-color .2s linear;
+} */
