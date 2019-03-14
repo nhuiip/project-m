@@ -43,18 +43,23 @@ class Main extends CI_Controller {
 			);
 			$data['listpackage'] = $this->main->listpackage($condition);
 	
-			$condition = array();
-			$condition['fide'] = "*";
-			$condition['where'] = array('tb_detailpackage.pack_id' => $data['listpackage'][0]['pack_id']);
-			$data['listdetailpack'] = $this->main->listdetailpack($condition);
-			
-			if(count($data['listdetailpack']) != 0) {
-				$total = array();
-				for($i = 0;$i < count($data['listdetailpack']);$i++){
-					$total[$i] = $data['listdetailpack'][$i]['total_price'];
-				}
-				$orders_total = array_sum($total);
+			if(count($data['listpackage']) != 0){
+				$condition = array();
+				$condition['fide'] = "*";
+				$condition['where'] = array('tb_detailpackage.pack_id' => $data['listpackage'][0]['pack_id']);
+				$data['listdetailpack'] = $this->main->listdetailpack($condition);
+				
+				if(count($data['listdetailpack']) != 0) {
+					$total = array();
+					for($i = 0;$i < count($data['listdetailpack']);$i++){
+						$total[$i] = $data['listdetailpack'][$i]['total_price'];
+					}
+					$orders_total = array_sum($total);
+				} 
+			} else {
+				$data['typeorder'] = 1;
 			}
+
 		}
 
 		$this->template->js(array(
@@ -62,7 +67,7 @@ class Main extends CI_Controller {
 			base_url('assets/canvas/js/methods/app/function'),
 		));
 
-		if(count($data['liststudent']) != 0){
+		if(count($data['liststudent']) != 0 && count($data['listpackage']) != 0 && count($data['listdetailpack']) != 0){
 			if($data['liststudent'][0]['course_status'] == 1){
 				$course_status = '4ปีปกติ';
 			} else {
@@ -106,7 +111,7 @@ class Main extends CI_Controller {
 			$result = array(
 				'error' => true,
 				'title' => "ผิดพลาด",
-				'msg' => "ไม่พบข้อมูลที่คุณค้นหา!!.",
+				'msg' => "ไม่พบรหัสนักศึกษาที่คุณค้นหา!! กรุณาติดต่อเจ้าหน้าที่.",
 				'url' => site_url('main/index/')
 			);
 				echo json_encode($result);

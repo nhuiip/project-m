@@ -82,7 +82,13 @@ $error = "s";
       <td width="5%"><strong><?=$numrows;?></strong></td>
       <td width="50%" class="project-title"><?=$value['product_name'];?></td>
       <td width="10%" class="project-title"><?=$value['size_name'];?></td>
-      <td width="10%" class="project-title"><?=$value['amount'];?></td>
+      <td width="10%" class="project-title">
+        <? if($value['amount'] <= 50) { ?>
+          <b style="color: #FF0000"><?=$value['amount']?></b>
+        <? } else { ?>
+          <?=$value['amount']?>
+        <? } ?>
+      </td>
       <td width="10%"><!--- Action --->
         <div class="btn-group" style="width:100%">
           <button class="btn btn-sm btn-default " type="button" style="width:70%">Action</button>
@@ -109,7 +115,7 @@ $error = "s";
 </table>
 <?php }else{ ?>
   <hr>
-  <center><p style="color:#95a5a6;">"No results found in this list."</p><center>
+  <center><p style="color:#95a5a6;">"ไม่พบข้อมูลในรายการนี้"</p><center>
 <?php } ?>
 </div><!-- /ibox-content -->
 </div><!-- /ibox float-e-margins -->

@@ -1,13 +1,13 @@
 <!-- Breadcrumb for page -->
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
-        <h2>Administrators</h2>
+        <h2>ข้อมูลผู้ดูแลระบบ</h2>
         <ol class="breadcrumb">
             <li>
-                <a href="#">Home</a>
+                <a href="#">หน้าแรก</a>
             </li>
             <li class="active">
-                <strong>Administrators</strong>
+                <strong>ข้อมูลผู้ดูแลระบบ</strong>
             </li>
         </ol>
     </div>
@@ -93,9 +93,15 @@
                 <span class="sr-only">Toggle Dropdown</span>
             </button>
             <ul class="dropdown-menu" style="width:30%">
+                <? if($value['ad_id'] == $this->encryption->decrypt($this->input->cookie('sysli'))) { ?>
                 <li><a href="<?=site_url('administrator/form/'.$value['ad_id']);?>"><i class="fa fa-pencil"></i>&nbsp;&nbsp;&nbsp;แก้ไขข้อมูล</a></li>
+                <? } ?>
+                <? if($this->encryption->decrypt($this->input->cookie('sysp')) == 'Administrator') { ?>
                 <li><a href="#" class="Btn-delete" data-url="<?=site_url('administrator/delete/'.$value['ad_id']);?>"><i class="fa fa-trash"></i>&nbsp;&nbsp;&nbsp;ลบข้อมูล</a></li>
+                <? } ?>
+                <? if($value['ad_id'] == $this->encryption->decrypt($this->input->cookie('sysli')) || $this->encryption->decrypt($this->input->cookie('sysp')) == 'Administrator') { ?>
                 <li><a href="<?=site_url('administrator/formpassword/'.$value['ad_id']);?>"><i class="fa fa-repeat"></i>&nbsp;&nbsp;&nbsp;เปลี่ยนรหัสผ่าน</a></li>
+                <? } ?>
             </ul>
           </div>
         </td><!--- end Action --->

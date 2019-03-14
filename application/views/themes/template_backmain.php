@@ -3,6 +3,15 @@
 	$this->db->where(array('fac_delete_status' => 1));
 	$query = $this->db->get('tb_faculty');
 	$listfac = $query->result_array();
+
+	$this->db->select("*");
+	$this->db->from('tb_stockproduct');	
+	$this->db->join('tb_product', 'tb_product.product_id = tb_stockproduct.product_id');
+	$this->db->join('tb_size', 'tb_size.size_id = tb_stockproduct.size_id');
+	$this->db->where(array('tb_stockproduct.amount <=' => 50, 'tb_stockproduct.delete_status' => 1));
+	$query = $this->db->get();
+	$liststock = $query->result_array();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -62,14 +71,6 @@
 								<i class="fa fa-list-alt"></i> <span class="nav-label">จัดการ Intro</span>
 							</a>
 						</li>
-						<!-- <li>
-							<a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">จัดการข้อมูลนักศึกษา</span><span class="fa arrow"></span></a>
-							<ul class="nav nav-second-level collapse">
-							<? foreach ($listfac as $key => $value) { ?>
-								<li><a href="<?=site_url('student/student/indexdept/'.$value['fac_id']);?>"><?=$value['fac_initials'];?></a></li>
-							<? } ?>
-							</ul>
-						</li> -->
 						<li>
 							<a href="<?=site_url('student/student/indexfac');?>"><i class="fa fa-user"></i> <span class="nav-label">จัดการข้อมูลนักศึกษา</span></a>
 						</li>
@@ -118,6 +119,25 @@
 									<?=$this->encryption->decrypt($this->input->cookie('sysn'));?>
 								</span>
 							</li>
+							<li class="dropdown">
+								<a class="dropdown-toggle count-info" data-toggle="dropdown" href="#" aria-expanded="true">
+									<i class="fa fa-bell"></i>  <span class="label label-danger"><?=count($liststock);?></span>
+								</a>
+								<? if(count($liststock) != 0){ ?>
+								<ul class="dropdown-menu dropdown-alerts">
+									<? foreach ($liststock as $key => $value) {  ?>
+									<li>
+										<a href="<?=site_url('product/stock/index/'.$value['type_id'].'/'.$value['product_id']);?>">
+											<div>
+											<i class="fa fa-bell"></i>&nbsp;&nbsp;&nbsp; <?=$value['product_name'];?> stock is low
+											</div>
+										</a>
+									</li>
+									<? } ?>
+								</ul>
+								<? } ?>
+							</li>
+
 							<li>
 								<a href="<?=site_url('administrator/logout');?>">
 									<i class="fa fa-sign-out"></i> Logout

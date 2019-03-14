@@ -531,6 +531,22 @@ define(["jquery", "function", "bootstrap", "validate"], function($, fun) {
         }
       });
     }
+
+    if ($("#formMuti").length) {
+      $("#formMuti").validate({
+        rules: {
+          orders_status: { required: true },
+        },
+        messages: {
+          orders_status: { required: "กรุณากรอกข้อมูล." },
+        },
+        submitHandler: function(form) {
+          fun.dataSubmit(form);
+          return false;
+        }
+      });
+    }
+
   };
 
 

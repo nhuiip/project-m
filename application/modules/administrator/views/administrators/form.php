@@ -28,10 +28,10 @@
         <h2><?=$title;?></h2>
         <ol class="breadcrumb">
             <li>
-                <a href="#">Home</a>
+                <a href="#">หน้าแรก</a>
             </li>
             <li>
-                <a href="<?=site_url('administrator/main');?>">Administrators</a>
+                <a href="<?=site_url('administrator/main');?>">ผู้ดูแลระบบ</a>
             </li>
             <li class="active">
                 <strong><?=$title;?></strong>

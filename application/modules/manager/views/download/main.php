@@ -101,7 +101,7 @@
 
                   </tbody>
                 </table>
-                <?PHP }else{echo "No results found in this list.";}?>
+                <?PHP }else{echo "ไม่พบข้อมูลในรายการนี้";}?>
               </div>
 
               <!-- End contents for page -->

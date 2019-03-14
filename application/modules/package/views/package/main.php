@@ -99,7 +99,7 @@
 </table>
 <?php }else{ ?>
   <hr>
-  <center><p style="color:#95a5a6;">"No results found in this list."</p><center>
+  <center><p style="color:#95a5a6;">"ไม่พบข้อมูลในรายการนี้"</p><center>
 <?php } ?>
 </div><!-- /ibox-content -->
 </div><!-- /ibox float-e-margins -->

@@ -98,7 +98,7 @@
       <td width="20%"><?=$value['dept_name'];?></td>
       <td width="10%"><!--- Action --->
       <a href="<?=site_url('student/student/form/'.$value['dept_id'].'/'.$value['course_status'].'/'.$value['student_id']);?>">
-      <button class="btn btn-block btn-sm btn-default">แก้ไขข้อมูล</button>
+        <button class="btn btn-block btn-sm btn-default" type="button">แก้ไขข้อมูล</button>
       </a>
       </td><!--- end Action --->
       <td width="5%">
@@ -123,7 +123,7 @@
 </form>
 <?php }else{ ?>
   <hr>
-  <center><p style="color:#95a5a6;">"No results found in this list."</p><center>
+  <center><p style="color:#95a5a6;">"ไม่พบข้อมูลในรายการนี้"</p><center>
 <?php } ?>
 </div><!-- /ibox-content -->
 </div><!-- /ibox float-e-margins -->
@@ -148,6 +148,10 @@
           <input type="hidden" name="dept_id" id="dept_id" value="<?=$dept_id;?>">
           <input type="hidden" name="course_status" id="course_status" value="<?=$course;?>">
           <input type="file" class="form-control" name="csv_file" id="csv_file" require accept=".csv">
+          <hr>
+          <center>
+            <a href="<?=site_url('uploads/manual/format-csv.csv');?>" target="_blank"><u>format file CSV สำหรับนำเข้าข้อมูล</u></a>
+          </center>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>

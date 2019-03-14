@@ -82,6 +82,7 @@ if($type == 1){
         <div class="checkbox">
           <label>
             <input type="checkbox" value="<?=$value['orders_id'];?>" class="item" name="select[]" id="select">
+            <input type="hidden" value="<?=$value['orders_status'];?>" name="orders_status[]" id="orders_status">
           </label>
         </div>
         </td>
@@ -123,7 +124,7 @@ if($type == 1){
             </button>
             <ul class="dropdown-menu" style="width:30%">
                 <li><a href="<?=site_url('orders/detailorders/index/'.$value['orders_id'].'/'.$type);?>"><i class="fa fa-list"></i>&nbsp;&nbsp;&nbsp;รายละเอียด</a></li>
-                <li><a href="#" class="btn-activate" data-url="<?=site_url('orders/orders/activate/'.$value['orders_id'].'/'.$type);?>"><i class="fa fa-check"></i>&nbsp;&nbsp;&nbsp;รับของแล้ว</a></li>
+                <li><a href="#" class="btn-activate" data-url="<?=site_url('orders/orders/activate/'.$value['orders_id'].'/'.$value['orders_status'].'/'.$type);?>"><i class="fa fa-check"></i>&nbsp;&nbsp;&nbsp;รับของแล้ว</a></li>
                 <li><a href="#" class="btn-delete" data-url="<?=site_url('orders/orders/delete/'.$value['orders_id'].'/'.$type);?>"><i class="fa fa-trash"></i>&nbsp;&nbsp;&nbsp;ลบข้อมูล</a></li>
             </ul>
             </div>
@@ -143,7 +144,7 @@ if($type == 1){
 </form>
 <?php } else { ?>
   <hr>
-  <center><p style="color:#95a5a6;">"No results found in this list."</p><center>
+  <center><p style="color:#95a5a6;">"ไม่พบข้อมูลในรายการนี้"</p><center>
 <?php } ?>
 
 </div><!-- /ibox-content -->

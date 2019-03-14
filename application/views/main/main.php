@@ -13,16 +13,25 @@
 		</div>
 	</form>
 	<?php if(isset($typeorder) && $typeorder == 0){ ?>
-
+	<div class="col-md-8" style="padding-left:0px;">
 	<div class="alert alert-danger" role="alert">
 		<h3 style="margin: 0 0 10px;color:#FF0000;">คุณมีรายการสั่งซื้อเครื่องแบบนักศึกษาใหม่อยุ่แล้ว</h3>
 		<h3 style="margin: 0 0 10px;color:#FF0000;">หากต้องการสั่งซื้อเพิ่มเติมกรุณาไปที่เมนูรายการเครื่องแบบ</h3>
+	</div>
+	</div>
+	<?php } elseif(isset($typeorder) && count($typeorder) == 1){ ?>
+	<div class="col-md-8" style="padding-left:0px;">
+	<div class="alert alert-danger" role="alert">
+		<h3 style="margin: 0 0 10px;color:#FF0000;">ไม่พบข้อมูล!!</h3>
+		<h3 style="margin: 0 0 10px;color:#FF0000;">ไม่พบชุดเครื่องแบบที่คุณค้นหา กรุณาติดต่อเจ้าหน้าที่</h3>
+	</div>
 	</div>
 	<?php } elseif(isset($liststudent) && count($liststudent) != 0){ ?>
 		<form action="<?=site_url('main/addorder');?>" method="post" enctype="multipart/form-data" name="formAddorder" id="formAddorder" class="form-horizontal" novalidate>
 		<!-- list product -->
 		<div class="col-md-8" style="padding-left:0px;">
 		<div class="table-responsive bottommargin">
+			<? if(isset($listdetailpack) && count($listdetailpack) != 0){ ?>
 			<table class="table cart">
 				<thead>
 					<tr>
@@ -110,6 +119,12 @@
 			</div>
 		</div>
 		</form>
+		<? } else { ?>
+			<div class="alert alert-danger" role="alert">
+				<h3 style="margin: 0 0 10px;color:#FF0000;">ไม่พบข้อมูล!!</h3>
+				<h3 style="margin: 0 0 10px;color:#FF0000;">ไม่พบรายการเครื่องแบบ กรุณาติดต่อเจ้าหน้าที่</h3>
+			</div>
+		<? } ?>
 	<? } else { ?>
 <hr>
 <?PHP foreach ($listdata as $key => $value) { ?>
